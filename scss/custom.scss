@@ -2,16 +2,52 @@
 // This is the file you will want to update to customize your page.
 
 // Import Google fonts here
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400&display=swap');
 
+// Set Bootstrap's base font to Source Sans 3
+$font-family-base: 'Source Sans 3', sans-serif;
+
+// Set heading font to Libre Baskerville
+$headings-font-family: 'Libre Baskerville', serif;
 
 
 // Include any default variable overrides here (colors, font sizes, font family, etc..)
 
+// Custom theme colors
+$primary: #A04ADD;
+$secondary: #3B53C7;
+$success: #A4D882;
+$info: #59C1EF;
+$warning: #FFF689;
+$danger: #E5446D;
+$light: #f2f2f2;
+$dark: #181853;
+
+// Navbar customization
+$navbar-dark-color: rgba($light, .9);
+$navbar-dark-hover-color: rgba($light, 1);
+$navbar-dark-active-color: $light;
+
+// Update theme-colors map to use our custom colors
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// Ensure bg-light classes use the new light color
+$bg-light: $light;
 
 
 // Adjust nav link hover color here
 
-
+// Note: Commented out navbar color until Bootstrap variables are confirmed
+// $navbar-dark-bg: #181853;
 
 // Typography
 // Change font family for base text
@@ -22,11 +58,43 @@
 
 
 // Change font sizes for h1-h6 using values in assignment
+$h1-font-size: 3.052rem;
+$h2-font-size: 2.441rem;
+$h3-font-size: 1.953rem;
+$h4-font-size: 1.563rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
 
-
+// Ensure heading sizes are applied
+$headings-margin-bottom: 1rem;
+$headings-font-weight: 700;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Add additional custom code here
+
+// Navbar and footer custom styles
+.navbar, footer {
+    background-color: $dark !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba($light, 0.9);
+    &:hover, &:focus {
+        color: $light;
+    }
+    &.active {
+        color: $light;
+    }
+}
+
+// Ensure body uses Source Sans 3 and headings use Libre Baskerville
+body {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Baskerville', serif;
+}
 
 // Target .navbar-brand and change font-family to use 'Libre Baskerville'.
