@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Customizing Bootstrap</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body class="bg-light">
   <header>
@@ -62,7 +64,7 @@
         <h2 class="pb-2 border-bottom">Theme colors</h2>
         <div class="row g-4 py-3 row-cols-1 row-cols-lg-3">
           <div class="col d-flex align-items-start mb-3">
-            <div>
+            <div data-aos="flip-left">
               <h3>Primary</h3>
               <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
               <a href="#" class="btn btn-primary">
@@ -173,5 +175,8 @@
 
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  AOS.init();
+</script>
 </body>
 </html>
